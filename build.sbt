@@ -1,7 +1,7 @@
 // this bit is important
 sbtPlugin := true
 
-organization := "com.agapep.sbt"
+organization := "com.scalway"
 
 name := "sbt-pandoc"
 

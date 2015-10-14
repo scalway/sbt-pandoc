@@ -1,4 +1,4 @@
-package com.agapep.pandoc
+package com.scalway.sbt
 
 import java.io.FileWriter
 
@@ -16,7 +16,7 @@ object PandocPlugin extends AutoPlugin {
     val pandocParams        = settingKey[List[String]]("params for markdown cmd")
     val pandocDstFiles      = settingKey[List[String]]("what files'll be generated")
     val pandocGenerate      = inputKey[Unit]("Generates Markdown pdf file documentation")
-    val mergeMarkdownFiles    = settingKey[Boolean]("if .md files should be combined (merged) previously (internal).")
+    val mergeMarkdownFiles  = settingKey[Boolean]("if .md files should be combined (merged) previously (internal).")
 
   }
 
