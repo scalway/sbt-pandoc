@@ -1,7 +1,8 @@
 # SBT PANDOC
 
 This is an SBT 0.13 plugin which uses AutoPlugin and the PANDOC application to 
-build markdown documentation artifacts from SBT.
+build markdown documentation artifacts from SBT. 
+It assumes that pandoc is already installed on your machine.
 
 This is a fairly simple SBT plugin, whitch I wrote to learn how to write plugins.
 
@@ -26,8 +27,8 @@ addSbtPlugin("com.agapep.sbt" % "sbt-pandoc" % "0.0.1")
 In `build.sbt`:
 
 ```
-pandocSrcFolder := "/doc/"
-pandocDstFolder := "/web/public/main/doc/"
+pandocSrcFolder := "/doc/"                    //this is default 
+pandocDstFolder := "/web/public/main/doc/"    //this'll produce all files to target/web/public/main/doc/
 ```
 
 ## Usage
