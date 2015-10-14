@@ -2,13 +2,10 @@ package com.agapep.pandoc
 
 import java.io.FileWriter
 
+import sbt.Keys._
 import sbt._
-import Keys._
-import sbt.complete.Parsers._
 
-import java.net.URL
 import scala.io.Source
-import scala.util.control.NonFatal
 
 object PandocPlugin extends AutoPlugin {
 
@@ -61,7 +58,7 @@ object PandocPlugin extends AutoPlugin {
 
       //write every .md file to one bigger
       val inFiles:List[String] = mergeMarkdownFiles.value  match {
-        case true  => List(mergeMarkdownFiles(df, mdPaths, log))
+        case true  => List(mergeAllMarkdownFiles(df, mdPaths, log))
         case false => mdPaths
       }
 
@@ -74,14 +71,15 @@ object PandocPlugin extends AutoPlugin {
         ).!!
       }
 
-    ()},// We return nothing, or unit.
+      ()
+    },
 
 
     mergeMarkdownFiles := true
   )
 
 
-  def mergeMarkdownFiles(destinationFolder:String, mdFiles:Seq[String], log:Logger):String = {
+  def mergeAllMarkdownFiles(destinationFolder:String, mdFiles:Seq[String], log:Logger):String = {
     log.debug(s"merging files to doc.md in $destinationFolder...")
     val accuMdFile = destinationFolder + "doc.md"
     val fw = new FileWriter(accuMdFile, false)

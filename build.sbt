@@ -7,6 +7,6 @@ name := "sbt-pandoc"
 
 version := "0.0.1"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.6"
 
 scalacOptions ++= Seq("-deprecation", "-feature")
