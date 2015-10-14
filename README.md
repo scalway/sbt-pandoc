@@ -21,7 +21,7 @@ You must first download the git project and build it.  It is not available in th
 In `project/plugins.sbt`:
 
 ```
-addSbtPlugin("com.agapep.sbt" % "sbt-pandoc" % "0.0.1")
+addSbtPlugin("com.scalway" % "sbt-pandoc" % "0.0.1")
 ```
 
 In `build.sbt`:
@@ -41,24 +41,15 @@ It'll combine all .md files to one document using alphabetical order. I use code
 ├── 01_title
 │   ├── 00_title_page.md
 │   └── 01_about_document.md
-├── 02_android
-│   └── 03_android.md
 ├── 03_server
 │   ├── 02_dev.md
-│   ├── 03_spec.md
-│   ├── 03_testing.md
-│   └── 04_deploy.md
 ├── 04_REST
 │   ├── 01_abstract.md
 │   ├── 02_Pagination.md
-│   ├── 03_Attraction.md
-│   └── 04_Others.md
-├── 05_tools
-│   └── 06_tools.md
 ├── css
-│   └── buttondown.css
-└── images
-    ├── paylo_icon.png
+│   └── buttondown.css                 //all not .md files will be copied to pandocDstFolder
+└── images                             //that means you can use relative paths in all .md files
+    ├── paylo_icon.png                 //that means you can use relative paths in all .md files
     └── server_schema.png
 ```
 
